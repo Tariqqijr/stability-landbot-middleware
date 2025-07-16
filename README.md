@@ -11,7 +11,7 @@ A Node.js Express middleware application that provides endpoints for image gener
 
 ## API Endpoints
 
-### POST /generate-image
+### POST /api/generate-image
 
 Generates an image from a text prompt.
 
@@ -31,7 +31,7 @@ Generates an image from a text prompt.
 }
 ```
 
-### POST /enhance-image
+### POST /api/enhance-image
 
 Enhances an existing image using a text prompt.
 
@@ -48,7 +48,7 @@ Enhances an existing image using a text prompt.
 }
 ```
 
-### GET /health
+### GET /api/health
 
 Health check endpoint.
 
@@ -56,7 +56,8 @@ Health check endpoint.
 ```json
 {
   "status": "OK",
-  "message": "Stability Landbot Middleware is running"
+  "message": "Stability Landbot Middleware is running",
+  "timestamp": "2023-12-07T19:15:00.000Z"
 }
 ```
 
@@ -95,7 +96,7 @@ STABILITY_API_KEY=your_stability_ai_api_key_here
 npm start
 ```
 
-The server will start on port 3000. You can test the health endpoint at `http://localhost:3000/health`.
+The server will start on port 3000. You can test the health endpoint at `http://localhost:3000/api/health`.
 
 ### Getting a Stability AI API Key
 
@@ -195,7 +196,7 @@ All errors return JSON responses with error details.
 ### Generate Image with curl
 
 ```bash
-curl -X POST http://localhost:3000/generate-image \
+curl -X POST http://localhost:3000/api/generate-image \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A futuristic city at sunset",
@@ -207,7 +208,7 @@ curl -X POST http://localhost:3000/generate-image \
 ### Enhance Image with curl
 
 ```bash
-curl -X POST http://localhost:3000/enhance-image \
+curl -X POST http://localhost:3000/api/enhance-image \
   -F "image=@path/to/your/image.jpg" \
   -F "prompt=Make this image more vibrant and colorful" \
   -F "aspect_ratio=1:1" \

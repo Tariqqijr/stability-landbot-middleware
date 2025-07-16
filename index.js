@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+// Updated: Removed vercel.json secret reference
 const fetch = require('node-fetch');
 const FormData = require('form-data');
 const multer = require('multer');

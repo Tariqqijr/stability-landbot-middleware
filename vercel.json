@@ -11,8 +11,5 @@
       "src": "/(.*)",
       "dest": "index.js"
     }
-  ],
-  "env": {
-    "STABILITY_API_KEY": "@stability-api-key"
-  }
+  ]
 }

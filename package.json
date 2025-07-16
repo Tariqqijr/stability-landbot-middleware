@@ -1,22 +1,21 @@
 {
   "name": "stability-landbot-middleware",
   "version": "1.0.0",
-  "description": "Express middleware for Stability AI image generation and enhancement",
-  "main": "index.js",
+  "description": "Vercel serverless functions for Stability AI image generation and enhancement",
+  "type": "module",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for Vercel functions'",
+    "start": "vercel dev"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "node-fetch": "^2.7.0",
-    "form-data": "^4.0.0",
-    "multer": "^1.4.5-lts.1",
-    "dotenv": "^16.3.1"
+    "form-data": "^4.0.0"
   },
   "engines": {
-    "node": ">=14.x"
+    "node": ">=18.x"
   },
+  "keywords": ["vercel", "serverless", "stability-ai", "image-generation", "api"],
   "author": "",
   "license": "MIT"
 }

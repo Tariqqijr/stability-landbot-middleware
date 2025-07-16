@@ -156,7 +156,13 @@ app.use((req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Stability Landbot Middleware listening on port ${port}`);
-  console.log(`Health check available at: http://localhost:${port}/health`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`Stability Landbot Middleware listening on port ${port}`);
+    console.log(`Health check available at: http://localhost:${port}/health`);
+  });
+}
+
+// Export for Vercel
+module.exports = app;
